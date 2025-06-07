@@ -12,7 +12,7 @@ export class ParticleJS {
      * @returns Config JSON
      */
     static load() {
-        const url = `/assets/json/particles.json`;
+        const url = `assets/json/particles.json`;
         return fetch(url).then(res => res.json());
     }
 
