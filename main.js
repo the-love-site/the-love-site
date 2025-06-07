@@ -18,7 +18,7 @@ if (!token) {
     Auth.handleInvalidToken();
 }
 
-const configBasePath = `/configs/${token}`;
+const configBasePath = `configs/${token}`;
 const configUrl = `${configBasePath}/config.json`;
 
 Loading.start();
