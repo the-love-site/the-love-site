@@ -15,14 +15,11 @@
     "theme": {
         "scheme": "light",
         "color": {
-            "primary": "string",
-            "accent": "string",
-            "text": "",
-            "background": ""
+            "primary": "#0052d1"
         }
     },
     "metadata": {
-        "musicaUrl": "boolean",
+        "musica": "Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3",
         "videoUrl": "boolean",
         "fotoPrincipal": "imagem-principal.jpg",
         "fotosUrls": [],
