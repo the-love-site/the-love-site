@@ -1,0 +1,28 @@
+{
+    "token": "LUANA1",
+    "casal": {
+        "pessoa1": "Lu",
+        "pessoa2": "Rafa"
+    },
+    "data": {
+        "dia": 28,
+        "mes": 3,
+        "ano": 2025,
+        "hora": 15,
+        "minuto": 30,
+        "segundo": 0
+    },
+    "theme": {
+        "scheme": "dark",
+        "color": {
+            "primary": "#ff4c4c"
+        }
+    },
+    "metadata": {
+        "musica": "Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3",
+        "videoUrl": "",
+        "fotoPrincipal": "Imagem do WhatsApp de 2025-06-06 à(s) 20.32.54_2537341c.jpg",
+        "fotosUrls": [],
+        "texto": "Meu amor,<br/> A vida ao seu lado é um presente que nunca imaginei merecer. Obrigada por dividir comigo seus momentos, sua alegria e, acima de tudo, seu amor.<br/> Quase 3 meses que estamos juntos, e já aprendi que o amor é estar presente nos momentos bons e nos desafiadores, é rir até doer a barriga, é cuidar um do outro e construir sonhos juntos.<br/> Com você, tudo faz mais sentido. Você me mostra todos os dias o quanto é bom compartilhar a vida com alguém tão especial.<br/> Te amo mais do que ontem e menos do que amanhã."
+    }
+}

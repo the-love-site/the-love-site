@@ -1,0 +1,31 @@
+{
+    "token": "DQ27OK",
+    "casal": {
+        "pessoa1": "João",
+        "pessoa2": "Maria"
+    },
+    "data": {
+        "dia": 1,
+        "mes": 1,
+        "ano": 2000,
+        "hora": 15,
+        "minuto": 30,
+        "segundo": 0
+    },
+    "theme": {
+        "scheme": "light",
+        "color": {
+            "primary": "string",
+            "accent": "string",
+            "text": "",
+            "background": ""
+        }
+    },
+    "metadata": {
+        "musicaUrl": "boolean",
+        "videoUrl": "boolean",
+        "fotoPrincipal": "imagem-principal.jpg",
+        "fotosUrls": [],
+        "texto": ""
+    }
+}
