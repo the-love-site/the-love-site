@@ -59,6 +59,8 @@ const configUrl = `${configBasePath}/config.json`;
 function startApp(config, { skipLoading }) {
     Animation.animateEntranceOfStartButton();
 
+    document.title = `❤️ ${config.casal.pessoa1} & ${config.casal.pessoa2}`;
+
     if (skipLoading) {
         Loading.end();
     } else {
