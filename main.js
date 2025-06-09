@@ -9,7 +9,11 @@ import { Animation } from "./scripts/animation.js";
 
 import { ParticleJS } from "./scripts/libs/particle.js";
 
+const startTimer = 5000;
+
 Theme.initThemeSchemaControl();
+
+Loading.start();
 
 const paramsMap = Utils.getParamsMapFromUrl(window.location);
 const token = paramsMap.get('token');
@@ -21,30 +25,74 @@ if (!token) {
 const configBasePath = `configs/${token}`;
 const configUrl = `${configBasePath}/config.json`;
 
-Loading.start();
+/**
+ * @param {{
+ *  token: string;
+ *  casal: {
+ *      pessoa1: string;
+ *      pessoa2: string;
+ *  };
+ *  data: {
+ *      dia: number;
+ *      mes: number;
+ *      ano: number;
+ *      hora: number;
+ *      minuto: number;
+ *      segundo: number;
+ *  };
+ *  theme: {
+ *      scheme: 'light'|'dark';
+ *      color: {
+ *          primary: string;
+ *      };
+ *  };
+ *  metadata: {
+ *      musica: boolean;
+ *      videoUrl: boolean;
+ *      fotoLoading: string;
+ *      fotoPrincipal: string;
+ *      fotosUrls: string[];
+ *      texto: string;
+ *  };
+ * }} config
+ */
+function startApp(config, { skipLoading }) {
+    Animation.animateEntranceOfStartButton();
 
-fetch(configUrl)
-// .then(res => Utils.delayHttpResponse(res, 500))
-.then(res => Utils.parseRawConfigToObject(res))
-.then(config => {
-    Loading.setLoadingDiscImage(`${configBasePath}/assets/images/${config.metadata.fotoPrincipal}`);
+    if (skipLoading) {
+        Loading.end();
+    } else {
+        const continueBtn = Loading.getContinueButton();
 
-    Loading.getContinueButton().onclick = () => {
-
-        const songControl = new SongControl(`${configBasePath}/assets/songs/${config.metadata.musica}`);
-        songControl.start();
-
-        Animation.animateDisapearContinueButton()
-            .then(() => {
-                Animation.animateLoadingLabel();
-                Animation.animateLoadingImage()
-                    .then(() => {
-                        setTimeout(() => {
-                            Loading.end();
-                        }, 5000);
-                    });
-            });
-    };
+        function continueFn() {
+            continueBtn.disabled = true;
+    
+            const songControl = new SongControl(`${configBasePath}/assets/songs/${config.metadata.musica}`);
+            songControl.start();
+    
+            Loading.setLoadingDiscImage(`${configBasePath}/assets/images/${config.metadata.fotoLoading}`);
+    
+            Promise
+                .all([
+                    Animation.animateExitOfStartButton(),
+                    Animation.animateLoadingLabel(),
+                ])
+                .then(() => {
+                    setTimeout(() => {
+                        Loading
+                            .end()
+                            .then(() => {
+                                window.scroll({
+                                    top: 0,
+                                    behavior: 'smooth'
+                                });
+                            });
+                    }, startTimer);
+                });
+        }
+    
+        continueBtn.onclick = () => continueFn();
+    }
 
     ParticleJS
         .load()
@@ -63,6 +111,14 @@ fetch(configUrl)
     PageContent.updateNames(config.casal.pessoa1, config.casal.pessoa2);
     PageContent.updateText(config.metadata.texto);
 
+    const imagesUrls = [
+        `${configBasePath}/assets/images/${config.metadata.fotoPrincipal}`,
+        ...config.metadata.fotosUrls.map(url => `${configBasePath}/assets/images/carousel/${url}`),
+        `${configBasePath}/assets/images/${config.metadata.fotoPrincipal}`,
+    ];
+
+    PageContent.updateCarousel(...imagesUrls);
+
     const date = Utils.createDateObject(
         config.data.ano,
         config.data.mes,
@@ -73,5 +129,9 @@ fetch(configUrl)
     );
 
     PageContent.updateStartDate(date);
-})
+}
+
+fetch(configUrl)
+.then(res => res.json())
+.then(config => startApp(config, { skipLoading: false }))
 .catch(err => Auth.handleInvalidToken(err));

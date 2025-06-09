@@ -13,7 +13,7 @@ export class PageLayout {
     }
 
     static updateLoadingContinueButtonColor(color) {
-        const btn = document.getElementById('loading-continue-btn').querySelector('button');
+        const btn = document.getElementById('loading-continue-btn');
         btn.style.backgroundColor = color;
     }
 }

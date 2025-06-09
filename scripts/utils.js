@@ -17,52 +17,6 @@ export class Utils {
 
     /**
      * 
-     * @param {Response} res HTTP Response
-     * @param {number} duration 
-     * @returns 
-     */
-    static delayHttpResponse(res, duration) {
-        return new Promise((resolve) => setTimeout(() => resolve(res), duration));
-    }
-
-    /**
-     * @param {Response} rawConfigResponse
-     * @returns {{
-     *  token: string;
-     *  casal: {
-     *      pessoa1: string;
-     *      pessoa2: string;
-     *  };
-     *  data: {
-     *      dia: number;
-     *      mes: number;
-     *      ano: number;
-     *      hora: number;
-     *      minuto: number;
-     *      segundo: number;
-     *  };
-     *  theme: {
-     *      scheme: 'light'|'dark';
-     *      color: {
-     *          primary: string;
-     *      };
-     *  };
-     *  metadata: {
-     *      musica: boolean;
-     *      videoUrl: boolean;
-     *      fotoPrincipal: string;
-     *      fotosUrls: string[];
-     *      texto: string;
-     *  };
-     * }}
-     */
-    static parseRawConfigToObject(rawConfigResponse) {
-        const config = rawConfigResponse.json();
-        return config;
-    }
-
-    /**
-     * 
      * @param {*} year 
      * @param {*} month 
      * @param {*} day 

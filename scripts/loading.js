@@ -1,25 +1,25 @@
 export class Loading {
 
     static start() {
-        const loading = document.getElementById('loading');
-        const main = document.querySelector('main');
-
-        loading.style.opacity = 100;
-        loading.style.visibility = 'visible';
         document.body.style.overflow = 'hidden';
-
-        main.style.display = 'none';
     }
 
     static end() {
         const loading = document.getElementById('loading');
-        const main = document.querySelector('main');
 
-        loading.style.opacity = 0;
-        loading.style.visibility = 'hidden';
         document.body.style.overflow = 'auto';
 
-        main.style.display = 'flex';
+        const duration = 2500;
+        loading.style.animationDuration = `${duration}ms`;
+
+        loading.classList.add('slide-out-bottom');
+        
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                loading.style.display = 'none';
+                resolve();
+            }, duration);
+        })
     }
 
     /**
@@ -31,7 +31,19 @@ export class Loading {
     }
 
     static setLoadingDiscImage(imageUrl) {
-        const imageEl = document.getElementById('loading-image-disc-el');
-        imageEl.src = imageUrl;
+        const discEl = document.getElementById('loading-image-disc').firstElementChild;
+        const discChild = discEl.firstElementChild;
+
+        const imgEl = document.createElement('img');
+        imgEl.src = imageUrl;
+        imgEl.style.objectFit = 'cover';
+        imgEl.classList.add('rotate-in-center');
+
+        discEl.parentElement.style.scale = '100%';
+
+        setTimeout(() => discEl.insertBefore(imgEl, discChild), 500);
+
+        // const imageEl = document.getElementById('loading-image-disc-el');
+        // imageEl.src = imageUrl;
     }
 }

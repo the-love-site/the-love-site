@@ -1,0 +1,35 @@
+{
+    "token": "cris-e-geo-1",
+    "casal": {
+        "pessoa1": "Cristiano",
+        "pessoa2": "Georgina"
+    },
+    "data": {
+        "dia": 1,
+        "mes": 1,
+        "ano": 2016,
+        "hora": 15,
+        "minuto": 30,
+        "segundo": 0
+    },
+    "theme": {
+        "scheme": "light",
+        "color": {
+            "primary": "#0052d1"
+        }
+    },
+    "metadata": {
+        "video": "",
+        "musica": "Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3",
+        "fotoLoading": "images (2).jpeg",
+        "fotoPrincipal": "Cristiano-Ronaldo-Georgina-Rodriguez-in-Messika-UEFA-Champions-League-20242025-Group-Stage-Draw-585x780.jpg",
+        "fotosUrls": [
+            "25085929.webp",
+            "f21a3b7e3f3e640cacab1f7e0fc5e441.jpg",
+            "cristiano-ronaldo-mothers-day-tout-050524-9f6738bcd1e14a59b24e64060eba3bf0.jpg",
+            "mw-1920.webp",
+            "foto-georgina-rodriguez-e-cristiano-ronaldo_1_705083.webp"
+        ],
+        "texto": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+    }
+}

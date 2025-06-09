@@ -65,4 +65,18 @@ export class PageContent {
         divSecond.querySelector('span').innerHTML = secondsDiff;
         divSecond.querySelector('small').innerHTML = secondsDiff === 1 ? 'segundo' : 'segundos';
     }
+
+    static updateCarousel(...imageUrls) {
+        const carouselEl = document.getElementById('images-carousel');
+
+        for (const imgUrl of imageUrls) {
+            const imgEl = document.createElement('img');
+            imgEl.src = `${imgUrl}`;
+            imgEl.style.height = '100%';
+
+            carouselEl.appendChild(imgEl);
+        }
+
+        carouselEl.style.animationDuration = `${imageUrls.length * 3.75}s`;
+    }
 }
