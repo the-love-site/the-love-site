@@ -67,10 +67,10 @@ function startApp(config, { skipLoading }) {
         function continueFn() {
             continueBtn.disabled = true;
     
-            const songControl = new SongControl(`${configBasePath}/assets/songs/${config.metadata.musica}`);
+            const songControl = new SongControl(`${configBasePath}/songs/${config.metadata.musica}`);
             songControl.start();
     
-            Loading.setLoadingDiscImage(`${configBasePath}/assets/images/${config.metadata.fotoLoading}`);
+            Loading.setLoadingDiscImage(`${configBasePath}/images/${config.metadata.fotoLoading}`);
     
             Promise
                 .all([
@@ -107,14 +107,14 @@ function startApp(config, { skipLoading }) {
     PageLayout.updateCasalNameColor(config.theme.color.primary);
     PageLayout.updateDatesBgColor(config.theme.color.primary);
 
-    PageContent.updateMainImage(`${configBasePath}/assets/images/${config.metadata.fotoPrincipal}`);
+    PageContent.updateMainImage(`${configBasePath}/images/${config.metadata.fotoPrincipal}`);
     PageContent.updateNames(config.casal.pessoa1, config.casal.pessoa2);
     PageContent.updateText(config.metadata.texto);
 
     const imagesUrls = [
-        `${configBasePath}/assets/images/${config.metadata.fotoPrincipal}`,
-        ...config.metadata.fotosUrls.map(url => `${configBasePath}/assets/images/carousel/${url}`),
-        `${configBasePath}/assets/images/${config.metadata.fotoPrincipal}`,
+        `${configBasePath}/images/${config.metadata.fotoPrincipal}`,
+        ...config.metadata.fotosUrls.map(url => `${configBasePath}/images/carousel/${url}`),
+        `${configBasePath}/images/${config.metadata.fotoPrincipal}`,
     ];
 
     PageContent.updateCarousel(...imagesUrls);
