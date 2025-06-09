@@ -78,5 +78,9 @@ export class PageContent {
         }
 
         carouselEl.style.animationDuration = `${imageUrls.length * 3.75}s`;
+
+        const carouselContainer = carouselEl.parentElement;
+        carouselContainer.style.backgroundSize = 'cover';
+        carouselContainer.style.backgroundImage = `url(${imageUrls[0]})`;
     }
 }
