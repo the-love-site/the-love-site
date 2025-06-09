@@ -1,0 +1,34 @@
+{
+    "token": "eric-e-gi",
+    "casal": {
+        "pessoa1": "Eric",
+        "pessoa2": "Gislaine"
+    },
+    "data": {
+        "dia": 30,
+        "mes": 7,
+        "ano": 2022,
+        "hora": 16,
+        "minuto": 40,
+        "segundo": 0
+    },
+    "theme": {
+        "scheme": "dark",
+        "color": {
+            "primary": "#ec1313"
+        }
+    },
+    "metadata": {
+        "video": "",
+        "musica": "Calvin Harris - Feel So Close (Lyrics).mp3",
+        "fotoLoading": "Eric Vinícius - capa cd.jpg",
+        "fotoPrincipal": "Eric Vinícius.jpg",
+        "fotosUrls": [
+            "25085929.webp",
+            "f21a3b7e3f3e640cacab1f7e0fc5e441.jpg",
+            "cristiano-ronaldo-mothers-day-tout-050524-9f6738bcd1e14a59b24e64060eba3bf0.jpg",
+            "mw-1920.webp"
+        ],
+        "texto": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    }
+}
