@@ -81,6 +81,6 @@ export class PageContent {
 
         const carouselContainer = carouselEl.parentElement;
         carouselContainer.style.backgroundSize = 'cover';
-        carouselContainer.style.backgroundImage = `url(${imageUrls[0]})`;
+        carouselContainer.style.backgroundImage = `url("${imageUrls[0]}")`;
     }
 }
