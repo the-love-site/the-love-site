@@ -23,11 +23,6 @@ export class PageContent {
      * @param {Date} date 
      */
     static updateStartDate(date) {
-        const today = new Date();
-        const mToday = moment(today);
-
-        const mDate = moment(date);
-
         const divYear = document.getElementById('date-year');
         const divMonth = document.getElementById('date-month');
         const divDay = document.getElementById('date-day');
@@ -36,34 +31,67 @@ export class PageContent {
         const divSecond = document.getElementById('date-second');
         const divAndMore = document.getElementById('date-and-more');
 
-        const yearsDiff = +mToday.diff(mDate, 'years');
-        if (yearsDiff === 0) {
-            divYear.parentElement.style.display = 'none';
-            divAndMore.style.display = 'flex';
-        } else {
-            divYear.querySelector('span').innerHTML = yearsDiff;
-            divYear.querySelector('small').innerHTML = yearsDiff === 1 ? 'ano' : 'anos';
+        const interval = setInterval(() => {
+            const timeDiff = this.calcTimeDiff(date);
+
+            if (timeDiff.totalDiffInMs === 0) {
+                clearInterval(interval);
+            } else {
+                if (timeDiff.years === 0) {
+                    divYear.parentElement.style.display = 'none';
+                    divAndMore.style.display = 'flex';
+                } else {
+                    divYear.querySelector('span').innerHTML = timeDiff.years;
+                    divYear.querySelector('small').innerHTML = timeDiff.years === 1 ? 'ano' : 'anos';
+                }
+        
+                divMonth.querySelector('span').innerHTML = timeDiff.months;
+                divMonth.querySelector('small').innerHTML = timeDiff.months === 1 ? 'mês' : 'meses';
+        
+                divDay.querySelector('span').innerHTML = timeDiff.days;
+                divDay.querySelector('small').innerHTML = timeDiff.days === 1 ? 'dia' : 'dias';
+        
+                divHour.querySelector('span').innerHTML = timeDiff.hours <= 0 ? 0 : timeDiff.hours;
+                divHour.querySelector('small').innerHTML = timeDiff.hours === 1 ? 'hora' : 'horas';
+        
+                divMinute.querySelector('span').innerHTML = timeDiff.minutes;
+                divMinute.querySelector('small').innerHTML = timeDiff.minutes === 1 ? 'minuto' : 'minutos';
+        
+                divSecond.querySelector('span').innerHTML = timeDiff.seconds;
+                divSecond.querySelector('small').innerHTML = timeDiff.seconds === 1 ? 'segundo' : 'segundos';
+            }
+        });
+    }
+
+    static calcTimeDiff(initialDate) {
+        // Set your target date and time for the countdown
+        const targetDate = new Date(+initialDate);
+
+        let countdown = {
+            totalDiffInMs: 0,
+            years: 0,
+            months: 0,
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+
+        // Update the countdown every second
+        const now = new Date();
+        const timeDifference = (now.getTime()) - (targetDate.getTime());
+        countdown.totalDiffInMs = timeDifference;
+
+        if (timeDifference > 0) {
+            countdown.years = moment(now).diff(targetDate, 'years');
+            countdown.months = moment(now).diff(targetDate, 'months') % 12;
+            countdown.days = Math.floor((timeDifference / (1000 * 60 * 60 * 24)) % 30);
+            countdown.hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            countdown.minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            countdown.seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
         }
 
-        const monthsDiff = mToday.diff(mDate, 'months');
-        divMonth.querySelector('span').innerHTML = monthsDiff % 12;
-        divMonth.querySelector('small').innerHTML = (monthsDiff % 12) === 1 ? 'mês' : 'meses';
-
-        const daysDiff = (mToday.diff(moment(new Date(today.getFullYear(), today.getMonth(), date.getDate())), 'days'));
-        divDay.querySelector('span').innerHTML = daysDiff;
-        divDay.querySelector('small').innerHTML = daysDiff === 1 ? 'dia' : 'dias';
-
-        const hoursDiff = +(today.getHours() - date.getHours());
-        divHour.querySelector('span').innerHTML = hoursDiff <= 0 ? 0 : hoursDiff;
-        divHour.querySelector('small').innerHTML = hoursDiff === 1 ? 'hora' : 'horas';
-
-        const minutesDiff = +(today.getMinutes() - date.getMinutes());
-        divMinute.querySelector('span').innerHTML = (minutesDiff);
-        divMinute.querySelector('small').innerHTML = minutesDiff === 1 ? 'minuto' : 'minutos';
-
-        const secondsDiff = +(today.getSeconds() - date.getSeconds());
-        divSecond.querySelector('span').innerHTML = secondsDiff;
-        divSecond.querySelector('small').innerHTML = secondsDiff === 1 ? 'segundo' : 'segundos';
+        return countdown;
     }
 
     static updateCarousel(...imageUrls) {
