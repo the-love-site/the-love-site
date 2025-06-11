@@ -238,6 +238,9 @@
   .z-10 {
     z-index: 10;
   }
+  .z-20 {
+    z-index: 20;
+  }
   .z-50 {
     z-index: 50;
   }
@@ -644,11 +647,17 @@
   .text-blue-600 {
     color: var(--color-blue-600);
   }
+  .text-current {
+    color: currentcolor;
+  }
   .text-gray-600 {
     color: var(--color-gray-600);
   }
   .text-gray-800 {
     color: var(--color-gray-800);
+  }
+  .text-slate-200 {
+    color: var(--color-slate-200);
   }
   .text-slate-900 {
     color: var(--color-slate-900);
@@ -662,6 +671,9 @@
   .ordinal {
     --tw-ordinal: ordinal;
     font-variant-numeric: var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,);
+  }
+  .scheme-dark {
+    color-scheme: dark;
   }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
@@ -872,9 +884,19 @@
       color: var(--color-slate-200);
     }
   }
+  .dark\:text-slate-900 {
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-900);
+    }
+  }
   .dark\:text-white {
     &:where(.dark, .dark *) {
       color: var(--color-white);
+    }
+  }
+  .inverted-colors\:text-current {
+    @media (inverted-colors: inverted) {
+      color: currentcolor;
     }
   }
 }

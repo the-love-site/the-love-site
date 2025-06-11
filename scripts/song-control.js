@@ -57,7 +57,7 @@ export class SongControl {
         songAuthorEl.innerHTML = songAuthor;
 
         const songYearEl = playerEl.querySelector('#song-player-year');
-        songYearEl.innerHTML = `Ouvindo músicas juntos desde ${year}`;
+        songYearEl.innerHTML = `Compartilhando músicas desde ${year}`;
     }
 
     updatePlayerControlColor(color) {
