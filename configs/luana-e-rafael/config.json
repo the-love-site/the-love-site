@@ -19,8 +19,11 @@
         }
     },
     "metadata": {
-        "video": "",
-        "musica": "Estacao Fandangueira-DEFINICOES-SorrisoLindoOficial_.mp3",
+        "videoFileName": "video.mp4",
+        "videoFileType": "video/mp4",
+        "songName": "Definições - Estação Fandangueira - Sorriso Lindo Oficial",
+        "songAuthor": "Estação Fandangueira",
+        "songFileName": "Estacao Fandangueira-DEFINICOES-SorrisoLindoOficial_.mp3",
         "fotoLoading": "capa-cd.jpg",
         "fotoPrincipal": "foto-principal.jpg",
         "fotosUrls": [

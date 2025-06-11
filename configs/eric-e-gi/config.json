@@ -19,8 +19,11 @@
         }
     },
     "metadata": {
-        "video": "",
-        "musica": "Calvin Harris - Feel So Close (Lyrics).mp3",
+        "videoFileName": null,
+        "videoFileType": null,
+        "songName": "Feel So Close (Lyrics)",
+        "songAuthor": "Calvin Harris",
+        "songFileName": "Calvin Harris - Feel So Close (Lyrics).mp3",
         "fotoLoading": "Eric Vinícius - capa cd.jpg",
         "fotoPrincipal": "Eric Vinícius.jpg",
         "fotosUrls": [

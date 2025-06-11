@@ -19,8 +19,11 @@
         }
     },
     "metadata": {
-        "video": "",
-        "musica": "Richard Marx - Right Here Waiting (Official Music Video).mp3",
+        "videoFileName": null,
+        "videoFileType": null,
+        "songName": "Right Here Waiting (Official Music Video)",
+        "songAuthor": "Richard Marx",
+        "songFileName": "Richard Marx - Right Here Waiting (Official Music Video).mp3",
         "fotoLoading": "images (2).jpeg",
         "fotoPrincipal": "Cristiano-Ronaldo-Georgina-Rodriguez-in-Messika-UEFA-Champions-League-20242025-Group-Stage-Draw-585x780.jpg",
         "fotosUrls": [

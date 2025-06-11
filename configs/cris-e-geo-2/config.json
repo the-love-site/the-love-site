@@ -19,8 +19,11 @@
         }
     },
     "metadata": {
-        "video": "",
-        "musica": "Eu juro.mp3",
+        "videoFileName": null,
+        "videoFileType": null,
+        "songName": "Eu juro",
+        "songAuthor": "Leandro e Leonardo",
+        "songFileName": "Eu juro.mp3",
         "fotoLoading": "images (2).jpeg",
         "fotoPrincipal": "Cristiano-Ronaldo-Georgina-Rodriguez-in-Messika-UEFA-Champions-League-20242025-Group-Stage-Draw-585x780.jpg",
         "fotosUrls": [
