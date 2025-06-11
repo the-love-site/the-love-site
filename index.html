@@ -8,7 +8,7 @@
     <link href="styles/tailwindcss-output.css" rel="stylesheet">
     <link href="styles/animista.css" rel="stylesheet">
 </head>
-<body class="bg-slate-200 dark:bg-gray-800 py-0 md:py-20">
+<body class="bg-slate-200 dark:bg-gray-800 text-slate-900 dark:text-slate-200 py-0 md:py-28">
     <!-- Loading overlay -->
     <aside
         id="loading"
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="w-full max-w-lg overflow-hidden p-6">
-            <div id="loading-label" class="invisible py-2 text-gray-800 dark:text-white text-center overflow-hidden">
+            <div id="loading-label" class="invisible py-2 text-center overflow-hidden">
                 <small class="font-sans text-base md:text-lg">
                     (Aumente o volume)
                 </small>
@@ -39,7 +39,7 @@
             </div>
             <button
                 id="loading-continue-btn"
-                class="font-theme text-5xl text-white dark:text-gray-800 p-4 w-full rounded-full cursor-pointer shadow-md transition hover:brightness-105 focus:brightness-105 disabled:bg-gray-600 hover:shadow-lg focus:shadow-lg">
+                class="font-theme text-5xl p-4 w-full rounded-full cursor-pointer shadow-md transition hover:brightness-105 focus:brightness-105 disabled:bg-gray-600 hover:shadow-lg focus:shadow-lg">
                 Continuar
             </button>
         </div>
@@ -52,11 +52,11 @@
 
     <!-- Main -->
     <main
-        class="relative z-50 flex-col gap-12 rounded-lg w-full max-w-5xl mx-auto pt-4 pb-20 bg-[rgba(255,255,255,0.7)] dark:bg-[rgba(0,0,0,0.7)] shadow-2xl">
+        class="relative z-50 flex flex-col gap-12 rounded-lg w-full max-w-5xl mx-auto pt-6 pb-28 bg-[rgba(255,255,255,0.7)] dark:bg-[rgba(0,0,0,0.7)] shadow-2xl">
 
         <!-- Imagem principal -->
-        <section class="w-full flex justify-center p-4 overflow-hidden">
-            <div class="mx-auto flex flex-col gap-4 bg-white rounded-md w-96 max-w-screen h-[620px] max-h-screen p-6 shadow-lg transition -rotate-2 scale-105 hover:-rotate-2 focus:-rotate-2 hover:scale-105 focus:scale-105">
+        <section class="w-full flex justify-center p-4">
+            <div class="mx-auto flex flex-col gap-4 bg-white rounded-md w-96 max-w-screen h-[620px] max-h-screen p-6 shadow-lg transition hover:-rotate-2 focus:-rotate-2 hover:scale-105 focus:scale-105">
                 <div class="flex justify-center items-center w-full h-full rounded-md overflow-hidden">
                     <img
                         id="main-image"
@@ -72,30 +72,30 @@
                 </div>
             </div>
         </section>
-        <section class="w-full sticky md:static top-0 pt-4 pb-2 bg-[rgba(255,255,255)] dark:bg-[rgba(0,0,0)] shadow-2xl">
+        <section class="w-full z-10 sticky md:static top-0 p-6 bg-[rgba(255,255,255)] dark:bg-[rgba(0,0,0)] shadow-2xl">
             <header id="casal-name" class="font-theme text-center text-5xl md:text-6xl">
                 <span id="person1"></span>
                 <span class="text-4xl">&</span>
                 <span id="person2"></span>
             </header>
         </section>
-        <section class="p-4 my-4 mx-auto max-w-2xl">
-                <p
-                    id="text"
-                    class="text-center text-xl md:text-2xl text-slate-900 dark:text-slate-200"></p>
+        <section class="p-4 mx-auto max-w-2xl">
+            <p
+                id="text"
+                class="text-center text-xl md:text-2xl"></p>
         </section>
-        <section class="my-6 h-[75vh] md:h-[50vh] overflow-hidden">
-            <div id="images-carousel" class="min-w-full w-max h-full flex marquee"></div>
+        <section class="max-w-screen h-[75vh] md:h-[50vh] overflow-hidden">
+            <div id="images-carousel" class="min-w-full w-full h-full flex overflow-hidden"></div>
         </section>
-        <section class="p-4 mx-auto w-2xl max-w-screen">
-            <header class="font-theme text-center text-4xl font-semibold text-slate-900 dark:text-slate-200">
+        <section class="p-4 mx-auto w-2xl max-w-full">
+            <header class="font-theme text-center text-4xl font-semibold">
                 Compartilhando momentos há
             </header>
-            <div class="w-full mt-4 grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="mt-8 w-full grid grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="date-box rounded-md p-0.5 pb-2.5">
                     <div
                         id="date-year"
-                        class="bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
+                        class="text-black bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
                         <span class="text-4xl font-bold"></span>
                         <small class="text-base font-semibold">
                             anos
@@ -105,7 +105,7 @@
                 <div class="date-box rounded-md p-0.5 pb-2.5">
                     <div
                         id="date-month"
-                        class="bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
+                        class="text-black bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
                         <span class="text-4xl font-bold"></span>
                         <small class="text-base font-semibold">
                             meses
@@ -115,7 +115,7 @@
                 <div class="date-box rounded-md p-0.5 pb-2.5">
                     <div
                         id="date-day"
-                        class="bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
+                        class="text-black bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
                         <span class="text-4xl font-bold"></span>
                         <small class="text-base font-semibold">
                             dias
@@ -125,7 +125,7 @@
                 <div class="date-box rounded-md p-0.5 pb-2.5">
                     <div
                         id="date-hour"
-                        class="bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
+                        class="text-black bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
                         <span class="text-4xl font-bold"></span>
                         <small class="text-base font-semibold">
                             horas
@@ -135,7 +135,7 @@
                 <div class="date-box rounded-md p-0.5 pb-2.5">
                     <div
                         id="date-minute"
-                        class="bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
+                        class="text-black bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
                         <span class="text-4xl font-bold"></span>
                         <small class="text-base font-semibold">
                             minutos
@@ -145,7 +145,7 @@
                 <div class="date-box rounded-md p-0.5 pb-2.5">
                     <div
                         id="date-second"
-                        class="bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
+                        class="text-black bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
                         <span class="text-4xl font-bold"></span>
                         <small class="text-base font-semibold">
                             segundos
@@ -153,12 +153,58 @@
                     </div>
                 </div>
                 <div id="date-and-more" class="date-box hidden rounded-md p-0.5 pb-2.5">
-                    <div class="bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
+                    <div class="text-black bg-white rounded-md p-6 flex flex-col items-center justify-center gap-2">
                         <span class="text-2xl font-bold text-center">
                             e contando...
                         </span>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="p-4 mx-auto w-2xl max-w-full">
+            <header class="font-theme text-center text-4xl font-semibold">
+                😍 Nossa música 😍
+            </header>
+            <div class="mt-8 w-full">
+                <div id="song-player" class="p-4 w-full rounded-xl bg-white flex items-center gap-2 md:gap-4 shadow-lg">
+                    <div class="w-14 h-14 md:w-20 md:h-20 shrink-0 rounded-md overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src=""
+                            alt="">
+                    </div>
+                    <div class="flex flex-col gap-1 truncate">
+                        <div class="flex items-center gap-4">
+                            <img
+                            class="w-4 h-4"
+                            src="assets/audio.gif"
+                            alt="">
+                            <div id="song-player-name" class="font-bold truncate"></div>
+                        </div>
+                        <div id="song-player-author" class="text-gray-600 font-semibold"></div>
+                        <div id="song-player-year" class="hidden md:block text-sm text-gray-600"></div>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="song-player-play-pause" class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full shadow-lg transition cursor-pointer hover:scale-105 focus:scale-105">
+                            <img
+                                class="player-btn-play w-5 h-5 hidden dark:flex"
+                                src="assets/btn-play-black.png"
+                                alt="">
+                            <img
+                                class="player-btn-pause w-5 h-5 hidden dark:flex"
+                                src="assets/btn-pause-black.png"
+                                alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section-video" class="hidden p-4 mx-auto w-2xl max-w-full">
+            <header class="font-theme text-center text-4xl font-semibold">
+                Nosso momento
+            </header>
+            <div class="mt-8 w-full max-w-screen h-[620px] max-h-screen flex justify-center">
+                <video controls></video>
             </div>
         </section>
     

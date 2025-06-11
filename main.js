@@ -47,8 +47,11 @@ const configUrl = `${configBasePath}/config.json`;
  *      };
  *  };
  *  metadata: {
- *      musica: boolean;
- *      videoUrl: boolean;
+ *      songFileName: string;
+ *      songName: string;
+ *      songAuthor: string;
+ *      videoFileName: string;
+ *      videoFileType: string;
  *      fotoLoading: string;
  *      fotoPrincipal: string;
  *      fotosUrls: string[];
@@ -61,6 +64,9 @@ function startApp(config, { skipLoading }) {
 
     document.title = `❤️ ${config.casal.pessoa1} & ${config.casal.pessoa2}`;
 
+    const songControl = new SongControl(`${configBasePath}/songs/${config.metadata.songFileName}`);
+    const loadingDiscImagePath = `${configBasePath}/images/${config.metadata.fotoLoading}`;
+
     if (skipLoading) {
         Loading.end();
     } else {
@@ -69,10 +75,9 @@ function startApp(config, { skipLoading }) {
         function continueFn() {
             continueBtn.disabled = true;
     
-            const songControl = new SongControl(`${configBasePath}/songs/${config.metadata.musica}`);
             songControl.start();
     
-            Loading.setLoadingDiscImage(`${configBasePath}/images/${config.metadata.fotoLoading}`);
+            Loading.setLoadingDiscImage(loadingDiscImagePath);
     
             Promise
                 .all([
@@ -105,6 +110,15 @@ function startApp(config, { skipLoading }) {
 
     Theme.updateThemeSchema(config.theme.scheme);
 
+    songControl.updateSongMetadata(
+        config.metadata.songName,
+        config.metadata.songAuthor,
+        config.data.ano,
+        loadingDiscImagePath
+    );
+
+    songControl.updatePlayerControlColor(config.theme.color.primary);
+
     PageLayout.updateLoadingContinueButtonColor(config.theme.color.primary);
     PageLayout.updateCasalNameColor(config.theme.color.primary);
     PageLayout.updateDatesBgColor(config.theme.color.primary);
@@ -114,7 +128,6 @@ function startApp(config, { skipLoading }) {
     PageContent.updateText(config.metadata.texto);
 
     const imagesUrls = [
-        `${configBasePath}/images/${config.metadata.fotoPrincipal}`,
         ...config.metadata.fotosUrls.map(url => `${configBasePath}/images/carousel/${url}`),
         `${configBasePath}/images/${config.metadata.fotoPrincipal}`,
     ];
@@ -131,6 +144,11 @@ function startApp(config, { skipLoading }) {
     );
 
     PageContent.updateStartDate(date);
+
+    if (config.metadata.videoFileName) {
+        const url = `${configBasePath}/videos/${config.metadata.videoFileName}`;
+        PageContent.updateVideoData(url, config.metadata.videoFileType);
+    }
 }
 
 fetch(configUrl)

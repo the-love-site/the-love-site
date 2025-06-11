@@ -67,20 +67,75 @@ export class PageContent {
     }
 
     static updateCarousel(...imageUrls) {
+        const carouselVelocity = 2000;
         const carouselEl = document.getElementById('images-carousel');
 
         for (const imgUrl of imageUrls) {
+            const imgContainer = document.createElement('div');
+            imgContainer.setAttribute('data-image-carousel', 'carousel-item');
+            imgContainer.style.width = '100%';
+            imgContainer.style.height = '100%';
+            imgContainer.style.flexShrink = '0';
+            imgContainer.style.display = 'flex';
+            imgContainer.style.alignItems = 'center';
+            imgContainer.style.justifyContent = 'center';
+            imgContainer.style.transition = 'all 0s ease-in-out';
+            imgContainer.style.transitionDuration = `${carouselVelocity - 1000}ms`;
+            
+            imgContainer.style.background = `url("${imgUrl}")`;
+            imgContainer.style.backgroundSize = 'cover';
+            imgContainer.style.backgroundPosition = 'center';
+            
             const imgEl = document.createElement('img');
             imgEl.src = `${imgUrl}`;
+            imgEl.style.width = '100%';
             imgEl.style.height = '100%';
+            imgEl.style.objectFit = 'contain';
+            imgEl.style.backdropFilter = 'blur(5px)';
 
-            carouselEl.appendChild(imgEl);
+            imgContainer.appendChild(imgEl);
+
+            carouselEl.appendChild(imgContainer);
         }
 
-        carouselEl.style.animationDuration = `${imageUrls.length * 3.75}s`;
+        let currentCarouselIndex = 1;
+        const carouselItems = document.querySelectorAll('[data-image-carousel=carousel-item]');
 
-        const carouselContainer = carouselEl.parentElement;
-        carouselContainer.style.backgroundSize = 'cover';
-        carouselContainer.style.backgroundImage = `url("${imageUrls[0]}")`;
+        setInterval(() => {
+            // Accessing All the carousel Items
+            Array
+            .from(carouselItems)
+            .forEach((item) => {
+
+                if (currentCarouselIndex < (carouselItems.length + 1)) {
+                    item.style.transform = `translateX(-${currentCarouselIndex*100}%)`;
+                }
+            });
+
+            if (currentCarouselIndex < (carouselItems.length - 1)) {
+                currentCarouselIndex++;
+            } else {
+                currentCarouselIndex=0;
+            }
+        }, carouselVelocity);
+    }
+
+    static updateVideoData(videoUrl, videoType) {
+        const videoSection = document.getElementById('section-video');
+
+        const sourceEl = document.createElement('source');
+        sourceEl.type = videoType;
+        sourceEl.src = videoUrl;
+
+        const helperLink = document.createElement('a');
+        helperLink.href = videoUrl;
+        helperLink.innerHTML = 'Baixar o vídeo';
+
+        const videoElement = videoSection.querySelector('video');
+
+        videoElement.appendChild(sourceEl);
+        videoElement.appendChild(helperLink);
+
+        videoSection.style.display = 'block';
     }
 }

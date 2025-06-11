@@ -19,8 +19,11 @@
         }
     },
     "metadata": {
-        "video": "",
-        "musica": "Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3",
+        "videoFileName": null,
+        "videoFileType": null,
+        "songName": "Die With A Smile (Official Music Video)",
+        "songAuthor": "Lady Gaga, Bruno Mars",
+        "songFileName": "Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3",
         "fotoLoading": "images (2).jpeg",
         "fotoPrincipal": "Cristiano-Ronaldo-Georgina-Rodriguez-in-Messika-UEFA-Champions-League-20242025-Group-Stage-Draw-585x780.jpg",
         "fotosUrls": [
