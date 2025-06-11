@@ -1,0 +1,36 @@
+{
+    "token": "antonio-e-elizangela",
+    "casal": {
+        "pessoa1": "Elizangela",
+        "pessoa2": "Antonio"
+    },
+    "data": {
+        "dia": 1,
+        "mes": 2,
+        "ano": 1997,
+        "hora": 11,
+        "minuto": 0,
+        "segundo": 0
+    },
+    "theme": {
+        "scheme": "light",
+        "color": {
+            "primary": "#db0000"
+        }
+    },
+    "metadata": {
+        "videoFileType": null,
+        "videoFileName": null,
+        "songName": "Caçador de corações",
+        "songAuthor": "Gian e Giovani",
+        "songFileName": "Caçador de corações.mp3",
+        "fotoLoading": "capa-cd.jpg",
+        "fotoPrincipal": "Imagem do WhatsApp de 2025-06-11 à(s) 12.58.36_bd3a66c0.jpg",
+        "fotosUrls": [
+            "Imagem do WhatsApp de 2025-06-11 à(s) 12.58.35_03edb87e.jpg",
+            "Imagem do WhatsApp de 2025-06-11 à(s) 12.58.35_eb28131f.jpg",
+            "Imagem do WhatsApp de 2025-06-11 à(s) 12.58.36_d4845782.jpg"
+        ],
+        "texto": "❤️<br/> A vida é minha,<br/> Mas o coração, é seu.<br/> O sorriso é meu,<br/> Mas o motivo, é você.<br/><br/> Feliz dia dos namorados!❤️"
+    }
+}
