@@ -9,7 +9,7 @@ import { Animation } from "./scripts/animation.js";
 
 import { ParticleJS } from "./scripts/libs/particle.js";
 
-const startTimer = 5000;
+const startTimer = 2500;
 
 Theme.initThemeSchemaControl();
 
