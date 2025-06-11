@@ -1,0 +1,40 @@
+{
+    "token": "evaldo-e-sueli",
+    "casal": {
+        "pessoa1": "Sueli",
+        "pessoa2": "Evaldo"
+    },
+    "data": {
+        "dia": 22,
+        "mes": 7,
+        "ano": 1974,
+        "hora": 16,
+        "minuto": 0,
+        "segundo": 0
+    },
+    "theme": {
+        "scheme": "light",
+        "color": {
+            "primary": "#db0000"
+        }
+    },
+    "metadata": {
+        "videoFileType": null,
+        "videoFileName": null,
+        "songName": "É o Amor - Zezé Di Camargo & Luciano",
+        "songAuthor": "Zezé Di Camargo & Luciano",
+        "songFileName": "Zezé Di Camargo & Luciano - É o Amor (Áudio Oficial).mp3",
+        "fotoLoading": "capa-do-site-evaldo-e-sueli-dia-dos-namorados.jpg",
+        "fotoPrincipal": "494190983_2389007974808176_7163737527607683663_n.jpg",
+        "fotosUrls": [
+            "504795924_3074785509343001_3669288198988582539_n.jpg",
+            "77424157_1390951604393075_84342965736046592_n (1).jpg",
+            "476383792_2313824382326536_1499137477807722684_n.jpg",
+            "40126180_519911855104739_228536047338782720_n.jpg",
+            "185530157_1382925588749758_8968482990267960161_n.jpg",
+            "67402686_1288745977946972_1080936950782754816_n.jpg",
+            "482348646_2340482096327431_6111490569088432801_n.jpg"
+        ],
+        "texto": "Sueli, meu amor, há 50 anos dissemos “sim” um ao outro e a Deus. Desde então, caminhamos juntos na fé, criamos uma família linda e construímos uma vida abençoada. Você é meu presente diário, minha eterna namorada e o milagre mais doce que Deus me deu. Te amo com toda minha alma."
+    }
+}
